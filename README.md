@@ -2,8 +2,7 @@
 
 ## Integrantes do grupo
 </br>
-- Diego</br>
-- Moises</br>
-- Guilherme Souza de Oliveira</br>
+- Cassiano</br>
+- Gustavo</br>
+- Gustavo/br>
 - Sidney de Almeida Fernandes</br>
-- Weslley
