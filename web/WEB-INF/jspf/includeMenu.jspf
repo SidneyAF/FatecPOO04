@@ -1,0 +1,22 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@page import="br.com.poo.quiz.Login" %>
+
+
+
+<nav id="menu" class="navbar-dark container-fluid bg-light"  >
+    <div class="brand"  >
+        <h1 class="display-4">Projeto Quizz</h1>
+    </div>
+    <div style="float:right; margin-top:10px;">
+        <form action="Logout" method="post">
+        <a href="HomeGrupo.jsp"   class="btn btn-group-lg btn-lg"><h4>Início</h4></a>
+        <a href="home.jsp"   class="btn btn-group-lg btn-lg"><h4>Ranking</h4></a>
+        <%if(!(session.getAttribute("user")==null)){%>
+            <a href="meuperfil.jsp"   class="btn btn-group-lg btn-lg"><h4>Meu Perfil</h4></a>
+            <input type="submit" value="Logout" class="btn btn-danger btn-group-lg btn-lg"></input>
+        <%}else{%>
+            <a href="telalogin.jsp"   class="btn btn-success btn-group-lg btn-lg"><h4>Entrar</h4></a>
+        <%}%>
+	</form>
+    </div>
+</nav>

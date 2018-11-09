@@ -1,65 +1,81 @@
-<%@page import="java.util.Arrays"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Collections"%>
-<%-- 
-    Document   : home
-    Created on : 07/11/2018, 22:13:24
-    Author     : safju
---%>
-
-<%@page import="br.com.fatecpg.quiz.Jogadores"%>
-<%@page import="br.com.fatecpg.quiz.Db"%>
+<%@page import="br.com.poo.quiz.Quiz"%>
+<%@page import="br.com.poo.quiz.Usuario"%>
+<%@page import="br.com.poo.quiz.BancoUsuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            th{color:black;}
-        </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <%@include file="bootstrap.jspf"%>
-        <title>Home</title>
+        <title>Projeto Quizz</title>
+
+        <!--INCLUDE CSS -->
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <!-- INCLUDE CSS END-->
     </head>
     <body>
-        <% if (request.getParameter("nome") != null) {
-                session.setAttribute("usuario", request.getParameter("nome"));
-                response.sendRedirect("quiz.jsp");
-            }%>
-            
-             <div class="jumbotron">
-                 <h1 class="display-3">POO Projeto 04</h1>
-        <h3>Score</h3>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th color="black">Nome</th>
-                            <th>Pontuação</th>
-                       
-                        </tr>
-                    </thead>
-                     </thead>
-            <%for (Jogadores j : Db.getJogadores()) {%>
-            <%int i = Db.getJogadores().indexOf(j);%>
-             <tr class="table-secondary">
-                <td><%=j.getNome()%></td>
-                <td><%=j.getPontuacao()%></td>
-            </tr>
-            <%}%>
-                    
-                </table>
-        </div>
+        <!-- INCLUDE MENU -->
+        <%@include file="WEB-INF/jspf/includeMenu.jspf" %>
+        <!-- INCLUDE MENU END -->
+
         
-            <div style="position:absolute;width: 100%;padding:30px 10%;">
-            <form>
-                <fieldset>
-     
-              <div class="form-group row">       
-             <label class="col-form-label" for="inputDefault" color-fon>Nome:</label>       
-             <input type="text" name="nome" required class="form-control">
-            <input type="submit" name="login" value="Entrar" class="btn btn-primary">
-              </div>
-         </fieldset>
-            </form>
-            </div>
+
+        <%if (!(session.getAttribute("user") == null)) {%>
+        <a href="quizz.jsp" class="btn btn-primary btn-lg btn-block">INICIAR NOVO QUIZZ</a>
+        <%}%>
+
+        <div class="container">
+            <br><br>
+         <div class="row">
+                <div class="col-md-6">
+                    <div class="table-ranking">
+                        <h2 class="text-center ">Média das Notas</h2><hr class='bottom-line3'><br><br>
+                        <table class="table table-hover table-responsive">
+                            <tr>
+                                <th scope="row">Nome do jogador</th>
+                                <th>Média das Notas</th>
+                            </tr>
+                            <%
+                                for (Usuario usuario : BancoUsuarios.getUsuarios()) {%>
+                                <tr>
+                                
+                                <td><%=usuario.getNmUsuario()%></td>
+                                <td><%=usuario.CalculaMediaPontuacao()%></td>
+                            </tr>
+                            <%}%>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="table2">
+                        <h2 class="text-center ">Ranking</h2><hr class='bottom-line3'><br><br>
+                        <table class="table table-hover table-responsive">
+                            <tr>
+                                <th scope="row" >Nome do jogador</th>
+                                <th>Média</th>
+                                </tr>
+                            <%
+                                for (Usuario usuario : BancoUsuarios.getRanking()) {%>
+                                <tr>
+                                
+                                <td><%=usuario.getNmUsuario()%></td>
+                                <td><%=usuario.getMaiorNota()%></td>
+                            </tr>
+                            <%}%>
+                        </table>
+                    </div>
+                </div>
+            </div>  
+</div>
+                        <br><br>
+        <!-- INCLUDE FOOTER -->
+        <%@include file="WEB-INF/jspf/includeFooter.jspf" %>
+        <!-- INCLUDE FOOTER END -->
+
+        <!-- WoW Js-->
+        <script type="text/javascript" src="js/wow.js"></script>
+        <script>
+            new WOW().init();
+        </script>
     </body>
 </html>

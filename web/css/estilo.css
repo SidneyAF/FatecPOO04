@@ -1,0 +1,125 @@
+/* 
+    Created on : 14/10/2017, 10:21:33
+    Author     : Renan
+*/
+
+/* MENU - Nav */
+#menu{
+    content: '';
+    clear: both; 
+    display:table;
+  color: #00F;  
+  
+}
+
+.brand{
+    float:left;
+}
+nav li{
+  padding: 0px 10px;
+}
+
+nav li a{
+  color: #1a1a1a;
+  font-size: 18px;
+  transition: all .3s ease-in-out;
+}
+nav li a:hover{
+  color: #333333;
+  text-shadow: 1px 1px 10px rgba(51, 51, 51, 1);
+  transition: all .3s ease-in;
+}
+.transparent{
+  background: transparent;
+  transition: all .5s ease-in;
+}
+.nav-flat{
+  background: rgba(255, 255, 255, 0.6);
+  transition: all .5s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.brand{
+  max-height: 50px;
+  transition: max-height .5s ease-in-out;
+  color: #00F;
+}
+.new-brand{
+  max-height: 40px;
+  transition: max-height .5s ease-in-out;
+}
+
+/* FOOTER*/
+#footer{
+  width: 100%;
+  position:relative;
+  bottom:0;
+  background: #1a1a1a ;
+  color: #fff;
+  font-size: 14px;
+  padding: 40px 0;
+  width: 100%;
+  text-align: center;
+}
+#footer p{
+  margin: 0px;
+  color: #f2f2f2;
+}
+
+
+header{
+    background-image: url(../img/quiz.jpg);
+    background-repeat: no-repeat;
+  
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  background-attachment: fixed;
+ 
+  padding-top: 100px;
+    padding-bottom: 100px;
+   
+  }
+  
+  
+    
+    header .titulo {
+        color: #FF00FF;
+      font-size: 70px;
+      font-weight: 600;
+      margin-bottom: 50px;
+      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-transform: uppercase; } 
+
+      .team-member, .sistema{
+        text-align: center;
+      }
+  
+ul.social-buttons {
+  margin-bottom: 0; }
+  ul.social-buttons li a {
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    border-radius: 100%;
+    outline: none;
+    background-color: #222222; }
+    ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+      background-color: #fed136; }
+
+    .icone {
+    
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+    }
+    
+    .section-heading {
+    font-size: 40px;
+     }

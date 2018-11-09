@@ -1,4 +1,0 @@
-<%-- any content can be specified here e.g.: --%>
-<%@ page pageEncoding="UTF-8" %>
-<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-
