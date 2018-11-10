@@ -2,6 +2,6 @@
 
 ## Integrantes do grupo
 </br>
-- Cassiano</br>
-- Gustavo</br>
+- Cassiano Lucas</br>
+- Gustavo Henrique</br>
 - Sidney de Almeida Fernandes</br>
