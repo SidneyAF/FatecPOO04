@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="br.com.poo.quiz.Quiz"%>
 <%@page import="br.com.poo.quiz.Usuario"%>
 <%@page import="br.com.poo.quiz.BancoUsuarios"%>
@@ -18,7 +19,7 @@
         <%@include file="WEB-INF/jspf/includeMenu.jspf" %>
         <!-- INCLUDE MENU END -->
 
-        
+
 
         <%if (!(session.getAttribute("user") == null)) {%>
         <a href="quizz.jsp" class="btn btn-primary btn-lg btn-block">INICIAR NOVO QUIZZ</a>
@@ -26,21 +27,22 @@
 
         <div class="container">
             <br><br>
-         <div class="row">
+            <div class="row">
                 <div class="col-md-6">
                     <div class="table-ranking">
-                        <h2 class="text-center ">Média das Notas</h2><hr class='bottom-line3'><br><br>
+                        <h2 class="text-center ">Ultimas partidas</h2><hr class='bottom-line3'><br><br>
                         <table class="table table-hover table-responsive">
                             <tr>
                                 <th scope="row">Nome do jogador</th>
-                                <th>Média das Notas</th>
+                                <th>Pontuação</th>
                             </tr>
                             <%
+                                DecimalFormat df = new DecimalFormat("#,###.00");
                                 for (Usuario usuario : BancoUsuarios.getUsuarios()) {%>
-                                <tr>
-                                
+                            <tr>
+
                                 <td><%=usuario.getNmUsuario()%></td>
-                                <td><%=usuario.CalculaMediaPontuacao()%></td>
+                                <td><%=df.format(usuario.CalculaMediaPontuacao())%></td>
                             </tr>
                             <%}%>
                         </table>
@@ -52,12 +54,12 @@
                         <table class="table table-hover table-responsive">
                             <tr>
                                 <th scope="row" >Nome do jogador</th>
-                                <th>Média</th>
-                                </tr>
+                                <th>Pontuação</th>
+                            </tr>
                             <%
                                 for (Usuario usuario : BancoUsuarios.getRanking()) {%>
-                                <tr>
-                                
+                            <tr>
+
                                 <td><%=usuario.getNmUsuario()%></td>
                                 <td><%=usuario.getMaiorNota()%></td>
                             </tr>
@@ -66,8 +68,8 @@
                     </div>
                 </div>
             </div>  
-</div>
-                        <br><br>
+        </div>
+        <br><br>
         <!-- INCLUDE FOOTER -->
         <%@include file="WEB-INF/jspf/includeFooter.jspf" %>
         <!-- INCLUDE FOOTER END -->

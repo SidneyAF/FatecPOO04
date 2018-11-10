@@ -1,3 +1,5 @@
+<%@page import="br.com.poo.quiz.BancoUsuarios"%>
+<%@page import="br.com.poo.quiz.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,16 +19,19 @@
 
         <div class="card border-secondary mb-3" style="max-width: 20rem;margin: 0 auto;margin-top: 100px;">
             <div class="card-body">
-                <h1 class="display-4 text-center">Login</h1>
-                <form action="Login" method="post">
-                    <div class="form-group">
-                        <label for="loginUsuario">Usuário</label>
-                        <input type="text" name="usuario" class="form-control" id="loginUsuario" placeholder="Digite seu nome de usuário" required>
-                    </div>
-                    <center>
-                        <button type="submit" value="login" class="btn btn-primary btn-lg" style="width: 40%">Entrar</button>
-                        <a href="cadastro.jsp" class="btn btn-primary btn-lg"style="width: 40%" >Cadastrar</a>
-                    </center>
+                <h1 class="display-4 text-center">Cadastrar</h1><br>
+
+                <%
+                    if (request.getParameter("usuario") != null) {
+                        String nome = request.getParameter("usuario");
+                        Usuario usuario = new Usuario(nome, 0);
+                        BancoUsuarios.getUsuarios().add(usuario);
+                        response.sendRedirect("telalogin.jsp");
+                    }
+                %>
+                <form>
+                    Usuario <input type="text" name="usuario" required><br><br>
+                    <center><input type="submit" value="Cadastrar" class="btn btn-primary btn-lg"></button></center>
                 </form>
             </div>
         </div>
@@ -37,3 +42,5 @@
         <!-- INCLUDE FOOTER END -->
     </body>
 </html>
+
+

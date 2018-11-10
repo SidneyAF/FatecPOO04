@@ -25,7 +25,7 @@ public class Quiz {
         );
         questoes.add(primeiraQuestao);
        Questao segundaQuestao =  new Questao(
-        "Que Pais encontra dificuldades internas para fechar uma proposta da de saida da união europeia:",
+        "Que pais encontra dificuldades internas para fechar uma proposta da de saida da união europeia:",
                 "Reino Unido",
                 new String[] {"Polonia", 
                     "Italia",
@@ -44,7 +44,7 @@ public class Quiz {
         questoes.add(terceiraQuestao);
         
         Questao quartaQuestao = new Questao(
-        "ALem dos Estados Unidos, qual destes paises já possi embaixada em Jesusalém?",
+        "Alem dos Estados Unidos, qual destes paises já possi embaixada em Jesusalém?",
                 "Guatemala",
                 new String[] {"Borundi", 
                     "Guatemala", 
@@ -72,7 +72,7 @@ public class Quiz {
         Questao setimaQuestao = new Questao(
         "Qual destes paises foi o primeiro pais (de primeiro mundo) a legalizar a maconha para fins recreativos em todo territorio nascional:",
                 "Canadá",
-                new String[] {"Estads Unidos",
+                new String[] {"Estados Unidos",
                     "China",
                     "Canadá"}
         );

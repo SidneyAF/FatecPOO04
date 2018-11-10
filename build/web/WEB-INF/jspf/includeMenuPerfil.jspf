@@ -1,0 +1,17 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@page import="br.com.poo.quiz.Login" %>
+
+<nav class="navbar-dark container-fluid bg-light" style="content: '';clear: both; display:table;" >
+    <div style="float:left;" >
+        <h1 class="display-4">Meu Perfil</h1>
+    </div>
+    <div style="float:right; margin-top:10px;">
+        <form action="Logout" method="post">
+        <a href="home.jsp"   class="btn btn-group-lg btn-lg"><h4>Início</h4></a>
+        <a href="meuperfil.jsp"   class="btn btn-group-lg btn-lg"><h4>Meu Perfil</h4></a>
+        <%if(!(session.getAttribute("user")==null)){%>
+            <input type="submit" value="Logout" class="btn btn-danger btn-group-lg btn-lg"></input>
+        <%}%>
+	</form>
+    </div>
+</nav>

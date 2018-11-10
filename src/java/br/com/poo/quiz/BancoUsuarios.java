@@ -7,19 +7,20 @@ package br.com.poo.quiz;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 
 /**
  *
- * @author vitor
+ * @author Gustavo
  */
 public class BancoUsuarios {
     
     public static ArrayList<Usuario> usuarios;
     public static ArrayList<Usuario> QuizzesEfetuados;
     public static ArrayList<Usuario> ranking;
-    //victor.burghi@gmail.com
+   
     
     public static ArrayList<Double> getListaPontuacoesUsuario(String usuario){
         for (Usuario u : BancoUsuarios.getUsuarios()) {
@@ -68,8 +69,8 @@ public class BancoUsuarios {
         return QuizzesEfetuados;
     }
 
-    public static ArrayList<Usuario> setUsuarios(String nmUsuario, String nmSenhaUsuario) {
-        Usuario newUser = new Usuario(nmUsuario,nmSenhaUsuario,0);
+    public static ArrayList<Usuario> setUsuarios(String nmUsuario) {
+        Usuario newUser = new Usuario(nmUsuario,0);
         usuarios.add(newUser);
         return usuarios;
     }
@@ -117,4 +118,5 @@ public class BancoUsuarios {
     public static int totalQuizzesEfetuados(){
         return BancoUsuarios.getQuizzesEfetuados().size();
     }
+    
 }
